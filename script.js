@@ -18,4 +18,5 @@ const divide = function(a, b) {
     return c;
 };
 
-let firstNumber = 5;
+let firstNumber = 3;
+let operator = "+";
