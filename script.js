@@ -7,3 +7,8 @@ const subtract = function(a, b) {
     c = a - b;
     return c;
 };
+
+const multiply = function(a, b) {
+    c = a * b;
+    return c;
+};
