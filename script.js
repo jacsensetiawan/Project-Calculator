@@ -12,3 +12,8 @@ const multiply = function(a, b) {
     c = a * b;
     return c;
 };
+
+const divide = function(a, b) {
+    c = a / b;
+    return c;
+};
