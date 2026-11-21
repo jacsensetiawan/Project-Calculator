@@ -21,3 +21,7 @@ const divide = function(a, b) {
 let firstNumber = 3;
 let operator = "+";
 let secondNumber = 5;
+
+const operate = function(operate, a, b) {
+
+};
