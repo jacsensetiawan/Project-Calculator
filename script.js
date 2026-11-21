@@ -17,3 +17,5 @@ const divide = function(a, b) {
     c = a / b;
     return c;
 };
+
+let firstNumber = 5;
