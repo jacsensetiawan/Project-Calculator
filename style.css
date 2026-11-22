@@ -22,3 +22,24 @@
     height: 40px;
     font-size: 18px;
 }
+
+.number {
+    background-color: lightblue;
+}
+
+.operator {
+    background-color: orange;
+}
+
+.equal {
+    background-color: lightgreen;
+}
+
+.clear {
+    background-color: lightcoral;
+}
+
+.buttons button:hover {
+    background-color: gray;
+    cursor:pointer;
+}
