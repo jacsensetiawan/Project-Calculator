@@ -18,9 +18,9 @@ const divide = function(a, b) {
     return c;
 };
 
-let firstNumber = 3;
-let operator = "+";
-let secondNumber = 5;
+let firstNumber = null;
+let operator = "";
+let secondNumber = null;
 
 const operate = function(operator, a, b) {
     if (operator === "+") {
@@ -33,3 +33,22 @@ const operate = function(operator, a, b) {
         return divide(a, b);
     } 
 };
+
+const numberButtons = document.querySelectorAll(".number");
+const display = document.querySelector(".display p");
+let currentNumber = "";
+
+numberButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        currentNumber += button.textContent;
+        display.textContent = currentNumber;
+    });
+});
+
+const operatorButtons = document.querySelectorAll(".operator");
+
+operatorButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+
+    });
+});
