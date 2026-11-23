@@ -68,3 +68,14 @@ equalButton.addEventListener("click", () => {
     display.textContent = result;
     isCalculated = true;
 });
+
+const clearButton = document.querySelector(".clear");
+
+clearButton.addEventListener("click", () => {
+    currentNumber = "";
+    operator ="";
+    firstNumber = null;
+    secondNumber = null;
+    isCalculated = false;
+    display.textContent = "";
+});
