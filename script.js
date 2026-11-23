@@ -1,20 +1,20 @@
 const add = function(a, b) {
-    c = a + b;
+    let c = a + b;
     return c;
 };
 
 const subtract = function(a, b) {
-    c = a - b;
+    let c = a - b;
     return c;
 };
 
 const multiply = function(a, b) {
-    c = a * b;
+    let c = a * b;
     return c;
 };
 
 const divide = function(a, b) {
-    c = a / b;
+    let c = a / b;
     return c;
 };
 
@@ -37,9 +37,14 @@ const operate = function(operator, a, b) {
 const numberButtons = document.querySelectorAll(".number");
 const display = document.querySelector(".display p");
 let currentNumber = "";
+let isCalculated = false;
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        if(isCalculated === true){
+            currentNumber = "";
+            isCalculated = false;
+        }
         currentNumber += button.textContent;
         display.textContent = currentNumber;
     });
@@ -49,6 +54,17 @@ const operatorButtons = document.querySelectorAll(".operator");
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
-
+        firstNumber = currentNumber;
+        currentNumber = "";
+        operator = button.textContent;
     });
+});
+
+const equalButton = document.querySelector(".equal");
+
+equalButton.addEventListener("click", () => {
+    secondNumber = currentNumber;
+    const result = operate(operator, Number(firstNumber), Number(secondNumber));
+    display.textContent = result;
+    isCalculated = true;
 });
