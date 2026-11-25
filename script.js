@@ -63,6 +63,10 @@ operatorButtons.forEach((button) => {
 const equalButton = document.querySelector(".equal");
 
 equalButton.addEventListener("click", () => {
+    if (currentNumber === "" || operator === "") {
+        return;
+    };
+
     secondNumber = currentNumber;
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
     display.textContent = result;
