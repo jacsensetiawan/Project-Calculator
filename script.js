@@ -43,6 +43,9 @@ numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         if(isCalculated === true){
             currentNumber = "";
+            firstNumber = null;
+            operator = "";
+            secondNumber = null;
             isCalculated = false;
         }
         currentNumber += button.textContent;
@@ -66,6 +69,7 @@ operatorButtons.forEach((button) => {
         
         currentNumber = "";
         operator = button.textContent;
+        isCalculated = false;
     });
 });
 
