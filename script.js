@@ -60,11 +60,12 @@ operatorButtons.forEach((button) => {
         if (firstNumber !== null && operator !== "" && currentNumber !== "") {
             secondNumber = currentNumber;
 
-              if (currentNumber === "0" && operator === "/") {
+              if (Number(currentNumber) === 0 && operator === "/") {
                 firstNumber = null;
                 operator = "";
                 secondNumber = null;
                 currentNumber = "";
+                isCalculated = false;
                 return display.textContent = "ERROR";
             }
 
@@ -89,11 +90,12 @@ equalButton.addEventListener("click", () => {
         return;
     };
 
-    if (currentNumber === "0" && operator === "/") {
+    if (Number(currentNumber) === 0 && operator === "/") {
         firstNumber = null;
         operator = "";
         secondNumber = null;
         currentNumber = "";
+        isCalculated = false;
         return display.textContent = "ERROR";
     }
 
