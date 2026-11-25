@@ -76,7 +76,7 @@ operatorButtons.forEach((button) => {
 const equalButton = document.querySelector(".equal");
 
 equalButton.addEventListener("click", () => {
-    if (currentNumber === "" || operator === "") {
+    if (currentNumber === "" || operator === "" || firstNumber === null) {
         return;
     };
 
