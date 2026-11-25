@@ -77,6 +77,8 @@ equalButton.addEventListener("click", () => {
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
     display.textContent = result;
     isCalculated = true;
+    firstNumber = result;
+    currentNumber = "";
 });
 
 const clearButton = document.querySelector(".clear");
