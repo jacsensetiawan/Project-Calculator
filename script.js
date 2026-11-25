@@ -54,7 +54,9 @@ const operatorButtons = document.querySelectorAll(".operator");
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        if (currentNumber !== "") {
         firstNumber = currentNumber;
+        }
         currentNumber = "";
         operator = button.textContent;
     });
