@@ -75,10 +75,12 @@ equalButton.addEventListener("click", () => {
 
     secondNumber = currentNumber;
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
-    display.textContent = result;
+    const roundedResult = Number(result.toFixed(2));
+    display.textContent = roundedResult;
     isCalculated = true;
-    firstNumber = result;
+    firstNumber = roundedResult;
     currentNumber = "";
+    
 });
 
 const clearButton = document.querySelector(".clear");
