@@ -59,6 +59,15 @@ operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         if (firstNumber !== null && operator !== "" && currentNumber !== "") {
             secondNumber = currentNumber;
+
+              if (currentNumber === "0" && operator === "/") {
+                firstNumber = null;
+                operator = "";
+                secondNumber = null;
+                currentNumber = "";
+                return display.textContent = "ERROR";
+            }
+
             const result = operate(operator, Number(firstNumber), Number(secondNumber));
             const roundedResult = Number(result.toFixed(2));
             display.textContent = roundedResult;
@@ -81,6 +90,10 @@ equalButton.addEventListener("click", () => {
     };
 
     if (currentNumber === "0" && operator === "/") {
+        firstNumber = null;
+        operator = "";
+        secondNumber = null;
+        currentNumber = "";
         return display.textContent = "ERROR";
     }
 
