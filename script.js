@@ -67,6 +67,10 @@ equalButton.addEventListener("click", () => {
         return;
     };
 
+    if (currentNumber === "0" && operator === "/") {
+        return display.textContent = "ERROR";
+    }
+
     secondNumber = currentNumber;
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
     display.textContent = result;
