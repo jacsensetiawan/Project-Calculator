@@ -54,9 +54,16 @@ const operatorButtons = document.querySelectorAll(".operator");
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        if (currentNumber !== "") {
-        firstNumber = currentNumber;
+        if (firstNumber !== null && operator !== "" && currentNumber !== "") {
+            secondNumber = currentNumber;
+            const result = operate(operator, Number(firstNumber), Number(secondNumber));
+            const roundedResult = Number(result.toFixed(2));
+            display.textContent = roundedResult;
+            firstNumber = roundedResult;
+        } else if(firstNumber === null && currentNumber !== "") {
+            firstNumber = currentNumber;
         }
+        
         currentNumber = "";
         operator = button.textContent;
     });
